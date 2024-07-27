@@ -160,7 +160,11 @@
 									</div>
 									<div class="col-md-6">
 										<h4>Free Counselling</h4>
-										<p>AT PRO SHIKSHA GUIDER, we provides one on one personalized counselling with SME ( subject matter expert) guiding students to get admitted in best college & graduate school in INDIA & ABROAD accordingly. These personalized counselling sessions offer comprehensive college planning with individualized attention, test preparation and hustle free admission.</p>
+										<p>AT PRO SHIKSHA GUIDER, we provides one on one personalized counselling with
+											SME ( subject matter expert) guiding students to get admitted in best
+											college & graduate school in INDIA & ABROAD accordingly. These personalized
+											counselling sessions offer comprehensive college planning with
+											individualized attention, test preparation and hustle free admission.</p>
 									</div>
 								</div>
 							</article>
@@ -277,17 +281,17 @@
 						<div class="top-content">
 							<h6>Register your free account and <em>get immediate</em> access to online courses</h6>
 						</div>
-						<form id="contact" action="" method="get">
+						<form onsubmit="sendMail(); reset(); return false;">
 							<div class="row">
 								<div class="col-md-12">
 									<fieldset>
-										<input name="name" type="text" class="form-control" id="name"
+										<input name="yourName" type="text" class="form-control" id="yourName"
 											placeholder="Your Name" required="">
 									</fieldset>
 								</div>
 								<div class="col-md-12">
 									<fieldset>
-										<input name="email" type="text" class="form-control" id="email"
+										<input name="yourEmail" type="text" class="form-control" id="yourEmail"
 											placeholder="Your Email" required="">
 									</fieldset>
 								</div>
@@ -502,8 +506,7 @@
 							interdum quam felis
 							non ante.
 						</p>
-						<div class="main-button"><a rel="nofollow" href=""
-								target="_parent">External
+						<div class="main-button"><a rel="nofollow" href="" target="_parent">External
 								URL</a></div>
 					</div>
 				</div>
@@ -536,17 +539,17 @@
                 	
                     Please visit  /contact page -->
 
-					<form id="contact" action="" method="post">
+					<form onsubmit="sendMail(); reset(); return false;">
 						<div class="row">
 							<div class="col-md-6">
 								<fieldset>
-									<input name="name" type="text" class="form-control" id="name"
+									<input name="yourName" type="text" class="form-control" id="yourName"
 										placeholder="Your Name" required="">
 								</fieldset>
 							</div>
 							<div class="col-md-6">
 								<fieldset>
-									<input name="email" type="text" class="form-control" id="email"
+									<input name="yourEmail" type="text" class="form-control" id="yourEmail"
 										placeholder="Your Email" required="">
 								</fieldset>
 							</div>
@@ -566,7 +569,9 @@
 				</div>
 				<div class="col-md-6">
 					<div id="map">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.1528928900225!2d77.50982465978312!3d28.465513865226725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1a08c8a59c3%3A0xe68bba6f6a1234ea!2sPari%20Chowk%20Park!5e0!3m2!1sen!2sin!4v1721389096189!5m2!1sen!2sin" width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.1528928900225!2d77.50982465978312!3d28.465513865226725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1a08c8a59c3%3A0xe68bba6f6a1234ea!2sPari%20Chowk%20Park!5e0!3m2!1sen!2sin!4v1721389096189!5m2!1sen!2sin"
+							width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen>
 						</iframe>
 					</div>
 				</div>
@@ -578,7 +583,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<p><i class="fa fa-copyright"></i> Copyright 2020 by pro shiksha guider | <a href="#" rel="sponsored" target="_blank">All Rights Reserved</a></p>
+					<p><i class="fa fa-copyright"></i> Copyright 2020 by pro shiksha guider | <a href="#"
+							rel="sponsored" target="_blank">All Rights Reserved</a></p>
 				</div>
 			</div>
 		</div>
@@ -586,6 +592,7 @@
 
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -596,6 +603,8 @@
 	<script src="assets/js/video.js"></script>
 	<script src="assets/js/slick-slider.js"></script>
 	<script src="assets/js/custom.js"></script>
+
+
 	<script>
 		//according to loftblog tut
 		$('.nav li:first').addClass('active');
@@ -646,6 +655,54 @@
 		$(window).scroll(function () {
 			checkSection();
 		});
+	</script>
+	<script>
+
+		function sendMail() {
+
+			const name = document.getElementById("yourName");
+			const email = document.getElementById("yourEmail");
+			const message = document.getElementById("message") || 'No Input Message';
+			const phoneNumber = document.getElementById("phone-number") || '0';
+
+			let ebody = `
+				<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+					<dityle="background-color: #yellow; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);">
+						<h2 style="color: #007bff;">Inquiry Details Received from the Website filled by the user: ${email.value}</h2>
+						<p style="margin: 10px 0;"><b style="color: #007bff;">Name:</b> <span style="color: #333;">${name.value}</span></p>
+						<p style="margin: 10px 0;"><b style="color: #007bff;">Email:</b> <span style="color: #333;">${email.value}</span></p>
+						<p style="margin: 10px 0;"><b style="color: #007bff;">Description:</b> <span style="color: #333;">${message.value}</span></p>
+						<p style="margin: 10px 0;"><b style="color: #007bff;">Phone Number if any:</b> <span style="color: #333;">${phoneNumber.value}</span></p>
+					</div>
+					<div style="margin-top: 20px; text-align: center; color: #777;">
+						<p>&copy; 2024 Prosiksha Guider. All rights reserved.</p>
+					</div>
+				</div>
+			`
+
+			let options = {
+				SecureToken: "33229a7d-b51f-41bc-8673-875d198f7cbd",
+				To: "proshikshaguider@gmail.com",
+				From: "proshikshaguider@gmail.com",
+				Subject: "Mail From Website",
+				Body: ebody
+			}
+
+			Email.send(options)
+				.then(
+					message => {
+						console.log(message);
+						if (message == 'OK') {
+							alert('Thanks for submitting details.We will contact you soon.');
+						}
+						else {
+							console.error(message);
+							alert('Error submitting form.')
+						}
+					}
+				);
+		}
+
 	</script>
 </body>
 
