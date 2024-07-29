@@ -582,6 +582,18 @@
 										placeholder="Your Email" required="">
 								</fieldset>
 							</div>
+							<div class="col-md-6">
+								<fieldset>
+									<input name="phone-number" type="text" class="form-control" id="phone-number"
+										placeholder="Phone Number" required="">
+								</fieldset>
+							</div>
+							<div class="col-md-6">
+								<fieldset>
+									<input name="yourSubject" type="text" class="form-control" id="yourSubject"
+										placeholder="Chioce of Subject" required="">
+								</fieldset>
+							</div>
 							<div class="col-md-12">
 								<fieldset>
 									<textarea name="message" rows="6" class="form-control" id="message"
@@ -715,6 +727,7 @@
 			const email = document.getElementById("yourEmail");
 			const message = document.getElementById("message") || 'No Input Message';
 			const phoneNumber = document.getElementById("phone-number") || '0';
+			const yourSubject = document.getElementById("yourSubject") || '0';
 
 			let ebody = `
 				<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
@@ -724,6 +737,7 @@
 						<p style="margin: 10px 0;"><b style="color: #007bff;">Email:</b> <span style="color: #333;">${email.value}</span></p>
 						<p style="margin: 10px 0;"><b style="color: #007bff;">Description:</b> <span style="color: #333;">${message.value}</span></p>
 						<p style="margin: 10px 0;"><b style="color: #007bff;">Phone Number if any:</b> <span style="color: #333;">${phoneNumber.value}</span></p>
+						<p style="margin: 10px 0;"><b style="color: #007bff;">Phone Number if any:</b> <span style="color: #333;">${yourSubject.value}</span></p>
 					</div>
 					<div style="margin-top: 20px; text-align: center; color: #777;">
 						<p>&copy; 2024 Prosiksha Guider. All rights reserved.</p>

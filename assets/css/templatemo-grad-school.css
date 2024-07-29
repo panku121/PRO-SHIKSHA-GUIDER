@@ -1474,9 +1474,9 @@ section.contact form input {
 
 section.contact form textarea {
     width: 100%;
-    height: 220px;
-    max-height: 280px;
-    min-height: 220px;
+    height: 150px;
+    max-height: 180px;
+    min-height: 150px;
     background-color: rgba(250,250,250,0.1);
     border-radius: 0px;
     border: none;
