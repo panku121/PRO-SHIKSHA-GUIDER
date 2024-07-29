@@ -1551,6 +1551,9 @@ footer p a:hover {
   .main-header .logo {
     line-height: 73px;
   }
+  .main-header .logo a {
+    font-size: 25px;
+  }
   .main-menu li {
     display: block;
     line-height: 1;
