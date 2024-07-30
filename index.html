@@ -560,21 +560,31 @@
 							</div>
 							<div class="col-md-6">
 								<fieldset>
-									<input name="yourEmail" type="text" class="form-control" id="yourEmail"
+									<input name="yourEmail" type="email" class="form-control" id="yourEmail"
 										placeholder="Your Email" required="">
 								</fieldset>
 							</div>
 							<div class="col-md-6">
 								<fieldset>
-									<input name="phone-number" type="text" class="form-control" id="phone-number"
-										placeholder="Phone Number" required="">
+									<input name="phone-number" type="text" pattern="[7-9]{1}[0-9]{9}" class="form-control" id="phone-number"
+										placeholder="Mobile Number Only" required="">
 								</fieldset>
 							</div>
 							<div class="col-md-6">
-								<fieldset>
-									<input name="yourSubject" type="text" class="form-control" id="yourSubject"
-										placeholder="Chioce of Subject" required="">
-								</fieldset>
+								<!-- <fieldset> -->
+									<!-- <input type="text" class="form-control" name="yourSubject" id="yourSubject"
+										placeholder="Chioce of Subject" required=""> -->
+										<label for="subject" style="color: azure;">Select Subject / Courses:</label>
+										<select name="yourSubject" id="yourSubject" >
+											<option value="notSelected"></option>
+											<option value="computer">Computer Science</option>
+											<option value="physics">Physics</option>
+											<option value="mathematics">Mathematics</option>
+											<option value="ugCources">UG - Courses</option>
+											<option value="pgCources">PG - Courses</option>
+											<option value="other">Other - Courses</option>
+										</select>
+								<!-- </fieldset> -->
 							</div>
 							<div class="col-md-12">
 								<fieldset>
@@ -593,12 +603,12 @@
 				<div class="col-md-6">
 					<div id="map">
 						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.1528928900225!2d77.50982465978312!3d28.465513865226725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1a08c8a59c3%3A0xe68bba6f6a1234ea!2sPari%20Chowk%20Park!5e0!3m2!1sen!2sin!4v1721389096189!5m2!1sen!2sin"
-							width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen>
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d735.4016976968004!2d77.26462009652163!3d28.744050490324312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfec03fd3345d%3A0x31a3e306484aa65c!2sHayat%20Enclave%2C%20Ahmed%20Nagar%20Nawada%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201102!5e0!3m2!1sen!2sin!4v1722339442581!5m2!1sen!2sin" width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen>
 						</iframe>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</section>
 
