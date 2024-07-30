@@ -550,7 +550,7 @@
                 	
                     Please visit  /contact page -->
 
-					<form onsubmit="sendMail(); reset(); return false;">
+					<form id="contact-form" name="contact-form">
 						<div class="row">
 							<div class="col-md-6">
 								<fieldset>
@@ -584,7 +584,7 @@
 							</div>
 							<div class="col-md-12">
 								<fieldset>
-									<button type="submit" id="form-submit" class="button">Send Message Now</button>
+									<button type="submit" value="Submit" id="submit">Send Message Now</button>
 								</fieldset>
 							</div>
 						</div>
@@ -637,6 +637,8 @@
 
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->
+	<script src="GoogleSheet.js"></script>
+
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -701,7 +703,7 @@
 			checkSection();
 		});
 	</script>
-	<script>
+	<!-- <script>
 
 		function sendMail() {
 
@@ -750,7 +752,7 @@
 				);
 		}
 
-	</script>
+	</script> -->
 </body>
 
 </html>
