@@ -1,0 +1,13 @@
+.navbar-nav .nav-item .nav-link {
+    color: #fff;
+}
+
+.upperHeader{
+    background-color: #F5A425;
+    height: 40px;
+    position: fixed;
+    z-index: 12;
+    width: 100%;
+    top: 0;
+    font-weight: 500;
+}
