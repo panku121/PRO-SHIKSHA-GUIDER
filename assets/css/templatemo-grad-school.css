@@ -78,8 +78,8 @@ a.menu-link { display: none; }
   a.menu-link {
     float: right;
     display: block;
-    font-size: 36px;
-    color: #fff;
+    font-size: 30px;
+    color: #f5a425;
     padding-right: 30px;
     padding-top: 15px;
   }
@@ -172,7 +172,7 @@ a.menu-link { display: none; }
 }
 
 .main-header .logo a {
-    font-size: 36px;
+    font-size: 30px;
     text-transform: uppercase;
     font-weight: 800;
     color: #fff;
@@ -1552,7 +1552,7 @@ footer p a:hover {
     line-height: 73px;
   }
   .main-header .logo a {
-    font-size: 25px;
+    font-size: 22px;
   }
   .main-menu li {
     display: block;
