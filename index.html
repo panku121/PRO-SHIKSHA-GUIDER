@@ -81,7 +81,7 @@
 			</ul>
 			</li>
 			<li><a href="#section4">Colleges</a></li>
-			<li><a href="https://proshikshaguider.com/contactUs.html">Contact</a></li>
+			<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -538,8 +538,8 @@
 		var showSection = function showSection(section, isAnimate) {
 			var
 				direction = section.replace(/#/, ''),
-				reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-				reqSectionPos = reqSection.offset().top - 0;
+				reqSection = $('.section')?.filter('[data-section="' + direction + '"]'),
+				reqSectionPos = reqSection?.offset()?.top - 0;
 
 			if (isAnimate) {
 				$('body, html').animate({
