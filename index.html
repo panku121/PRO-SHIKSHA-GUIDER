@@ -76,17 +76,17 @@
 					<a href="#section2">About Us</a>
 					<ul class="sub-menu">
 						<li><a href="#section2">Who we are?</a></li>
-						<li><a href="#section3">What we do?</a></li>
-						<li><a href="#section3">How it works?</a></li>
+						<!-- <li><a href="#section3">What we do?</a></li>
+						<li><a href="#section3">How it works?</a></li> -->
 					</ul>
 				</li>
 				<li><a href="#section4">Colleges</a></li>
-				<li><a href="https://proshikshaguider.com/contact.html">Contact</a></li>
+				<li><a href="/contact.html">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
 
-	<section class="section main-banner" id="top" data-section="section1">
+	<section class="section main-banner" id="section1">
 		<video autoplay muted loop id="bg-video">
 			<source src="assets/images/course-video.mp4" type="video/mp4" />
 		</video>
@@ -191,7 +191,7 @@
 		</div>
 	</section>
 
-	<section class="section why-us" data-section="section2">
+	<section class="section why-us" id="section2">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -293,7 +293,7 @@
 		</div>
 	</section>
 
-	<section class="section courses" data-section="section4">
+	<section class="section courses" id="section4">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
@@ -384,7 +384,7 @@
 		</div>
 	</section>
 
-	<section class="section contact" data-section="section6">
+	<section class="section contact" id="section6">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -531,57 +531,6 @@
 	<script src="assets/js/custom.js"></script>
 
 
-	<script>
-		//according to loftblog tut
-		$('.nav li:first').addClass('active');
-
-		var showSection = function showSection(section, isAnimate) {
-			var
-				direction = section.replace(/#/, ''),
-				reqSection = $('.section')?.filter('[data-section="' + direction + '"]'),
-				reqSectionPos = reqSection?.offset()?.top - 0;
-
-			if (isAnimate) {
-				$('body, html').animate({
-					scrollTop: reqSectionPos
-				},
-					800);
-			} else {
-				$('body, html').scrollTop(reqSectionPos);
-			}
-
-		};
-
-		var checkSection = function checkSection() {
-			$('.section').each(function () {
-				var
-					$this = $(this),
-					topEdge = $this.offset().top - 80,
-					bottomEdge = topEdge + $this.height(),
-					wScroll = $(window).scrollTop();
-				if (topEdge < wScroll && bottomEdge > wScroll) {
-					var
-						currentId = $this.data('section'),
-						reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-					reqLink.closest('li').addClass('active').
-						siblings().removeClass('active');
-				}
-			});
-		};
-
-		$('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
-			if ($(e.target).hasClass('external')) {
-				return;
-			}
-			e.preventDefault();
-			$('#menu').removeClass('active');
-			showSection($(this).attr('href'), true);
-		});
-
-		$(window).scroll(function () {
-			checkSection();
-		});
-	</script>
 </body>
 <!-- <script src="/vendor/jquery/mailToInbox.js"></script> -->
 <script src="/assets/js/getPopUp.js"></script>
