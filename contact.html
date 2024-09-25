@@ -72,22 +72,22 @@
 
 	<header class="main-header clearfix" role="header">
 		<div class="logo">
-			<a href="#">Pro<em> Shiksha</em> Guider</a>
+			<a href="/index.html">Pro<em> Shiksha</em> Guider</a>
 		</div>
-		<a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+		<a href="javascript:void(0);" class="menu-link" id="menu-toggle"><i class="fa fa-bars"></i></a>
 		<nav id="menu" class="main-nav" role="navigation">
 			<ul class="main-menu">
-				<li><a href="index.html#section1">Home</a></li>
-				<li class="has-submenu"><a href="index.html#section2">About Us</a>
+				<li><a href="/index.html#section1" class="menu-item">Home</a></li>
+				<li class="has-submenu">
+					<a href="/index.html#section2" class="menu-item">About Us</a>
 					<ul class="sub-menu">
-						<li><a href="index.html#section2">Who we are?</a></li>
-						<!-- <li><a href="index.html#section3">What we do?</a></li>
-						<li><a href="index.html#section3">How it works?</a></li> -->
+						<li><a href="/index.html#section2" class="menu-item">Who we are?</a></li>
+						<!-- <li><a href="#section3">What we do?</a></li>
+						<li><a href="#section3">How it works?</a></li> -->
+					</ul>
 				</li>
-			</ul>
-			</li>
-			<li><a href="index.html#section4">Colleges</a></li>
-			<li><a href="contact.html">Contact</a></li>
+				<li><a href="/index.html#section4" class="menu-item">Colleges</a></li>
+				<li><a href="/contact.html" class="menu-item">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -246,6 +246,48 @@
 			</div>
 		</div>
 	</footer>
+
+	<style>
+		/* Hide the menu by default on smaller screens */
+.main-nav {
+	display: none;
+}
+
+/* Show the menu on larger screens */
+@media (min-width: 768px) {
+	.main-nav {
+		display: block;
+	}
+}
+
+/* Style for the hamburger icon */
+.menu-link {
+	display: block;
+	cursor: pointer;
+}
+
+/* Hide the hamburger icon on larger screens */
+@media (min-width: 768px) {
+	.menu-link {
+		display: none;
+	}
+}
+
+/* Menu visible when toggled on smaller screens */
+.main-nav.open {
+	display: block;
+}
+
+/* Add some styling to the menu for better visibility on smaller screens */
+.main-nav {
+	position: absolute;
+	width: 100%;
+	top: 60px; /* Adjust according to header height */
+	left: 0;
+	z-index: 1000;
+}
+
+</style>
 	<!-- WhatsApp Icon and Style Section -->
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -274,6 +316,34 @@
 	<script src="assets/js/video.js"></script>
 	<script src="assets/js/slick-slider.js"></script>
 	<script src="assets/js/custom.js"></script>
+
+	<script>
+		// Function to toggle menu visibility
+		document.getElementById("menu-toggle").addEventListener("click", function () {
+			var menu = document.getElementById("menu");
+			menu.classList.toggle("open");
+		});
+
+		// Function to close the menu when clicking outside or on menu links
+		document.addEventListener("click", function (event) {
+			var menu = document.getElementById("menu");
+			var menuToggle = document.getElementById("menu-toggle");
+
+			// If the click happens outside the menu and it's not on the menu toggle, hide the menu
+			if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+				menu.classList.remove("open");
+			}
+		});
+
+		// Function to close the menu when clicking on a menu item
+		var menuItems = document.querySelectorAll(".menu-item");
+		menuItems.forEach(function (item) {
+			item.addEventListener("click", function () {
+				document.getElementById("menu").classList.remove("open");
+			});
+		});
+
+	</script>
 
 
 </body>
