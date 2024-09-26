@@ -23,7 +23,8 @@
 	<link rel="stylesheet" href="assets/css/upperHeader.css">
 	<link rel="stylesheet" href="assets/css/poOver.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/indianCollege.css">
+	<link rel="stylesheet" href="assets/css/indianCollege.css">	
+	<link rel="stylesheet" href="assets/css/menuNew.css">
 
 	<style>
 		.row{
@@ -247,47 +248,6 @@
 		</div>
 	</footer>
 
-	<style>
-		/* Hide the menu by default on smaller screens */
-.main-nav {
-	display: none;
-}
-
-/* Show the menu on larger screens */
-@media (min-width: 768px) {
-	.main-nav {
-		display: block;
-	}
-}
-
-/* Style for the hamburger icon */
-.menu-link {
-	display: block;
-	cursor: pointer;
-}
-
-/* Hide the hamburger icon on larger screens */
-@media (min-width: 768px) {
-	.menu-link {
-		display: none;
-	}
-}
-
-/* Menu visible when toggled on smaller screens */
-.main-nav.open {
-	display: block;
-}
-
-/* Add some styling to the menu for better visibility on smaller screens */
-.main-nav {
-	position: absolute;
-	width: 100%;
-	top: 60px; /* Adjust according to header height */
-	left: 0;
-	z-index: 1000;
-}
-
-</style>
 	<!-- WhatsApp Icon and Style Section -->
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -316,35 +276,6 @@
 	<script src="assets/js/video.js"></script>
 	<script src="assets/js/slick-slider.js"></script>
 	<script src="assets/js/custom.js"></script>
-
-	<script>
-		// Function to toggle menu visibility
-		document.getElementById("menu-toggle").addEventListener("click", function () {
-			var menu = document.getElementById("menu");
-			menu.classList.toggle("open");
-		});
-
-		// Function to close the menu when clicking outside or on menu links
-		document.addEventListener("click", function (event) {
-			var menu = document.getElementById("menu");
-			var menuToggle = document.getElementById("menu-toggle");
-
-			// If the click happens outside the menu and it's not on the menu toggle, hide the menu
-			if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-				menu.classList.remove("open");
-			}
-		});
-
-		// Function to close the menu when clicking on a menu item
-		var menuItems = document.querySelectorAll(".menu-item");
-		menuItems.forEach(function (item) {
-			item.addEventListener("click", function () {
-				document.getElementById("menu").classList.remove("open");
-			});
-		});
-
-	</script>
-
 
 </body>
 <!-- <script src="/vendor/jquery/mailToInbox.js"></script> -->

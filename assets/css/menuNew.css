@@ -1,0 +1,39 @@
+/* Hide the menu by default on smaller screens */
+.main-nav {
+    display: none;
+}
+
+/* Show the menu on larger screens */
+@media (min-width: 768px) {
+    .main-nav {
+        display: block;
+    }
+}
+
+/* Style for the hamburger icon */
+.menu-link {
+    display: block;
+    cursor: pointer;
+}
+
+/* Hide the hamburger icon on larger screens */
+@media (min-width: 768px) {
+    .menu-link {
+        display: none;
+    }
+}
+
+/* Menu visible when toggled on smaller screens */
+.main-nav.open {
+    display: block;
+}
+
+/* Add some styling to the menu for better visibility on smaller screens */
+.main-nav {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    /* Adjust according to header height */
+    left: 0;
+    z-index: 1000;
+}
